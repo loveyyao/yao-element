@@ -14,4 +14,4 @@
 
 ## 详情表单高阶组件
 
-> 详情查看[YaoDescRowForm](src/components/YaoDescForm/README.md)
+> 详情查看[YaoDescRowForm](../YaoDescForm/README.md)
