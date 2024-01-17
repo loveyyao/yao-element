@@ -11,3 +11,7 @@
 | propRequired | 字段是否必填，自动生成必填校验 | `Boolean` | `true`、`false`      | `null` |
 | formType             | 组件显示表单或详情       | `String`  | `form`：表单、`desc`：详情 |  |
 | descProp             | 详情`prop`        | `String`  |  |  |
+
+## 详情表单高阶组件
+
+> 详情查看[YaoDescRowForm](src/components/YaoDescForm/README.md)

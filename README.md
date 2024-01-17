@@ -6,3 +6,7 @@
 
 > `yao-desc-form`、`yao-desc-form-item`，使用跟`el-form`、`el-form-item`一致，可以实现详情和表单之间切换。
 > 详情查看组件文件下[README.md](src/components/YaoDescForm/README.md)
+
+## 详情表单高阶组件
+
+> 详情查看[YaoDescRowForm](src/components/YaoDescForm/README.md)
