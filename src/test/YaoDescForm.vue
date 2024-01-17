@@ -107,6 +107,14 @@
       <yao-desc-col-form-item :span="24" label="超出隐藏字段" prop="textarea">
         <el-input v-model="form.textarea" type="textarea" clearable placeholder="请输入"/>
       </yao-desc-col-form-item>
+      <yao-desc-col-form-item label="年范围选择" prop="year">
+        <yao-date-picker
+            v-model="form.year"
+            placeholder="年范围"
+            clearable
+            type="month"
+        />
+      </yao-desc-col-form-item>
     </yao-desc-row-form>
     <div>
       <el-button @click="switchFormType">详情表单切换</el-button>
@@ -121,10 +129,12 @@ import YaoDescForm from "@/components/YaoDescForm/index.vue";
 import YaoDescFormItem from "@/components/YaoDescFormItem/index.vue";
 import YaoDescRowForm from "@/components/YaoDescForm/YaoDescRowForm";
 import YaoDescColFormItem from "@/components/YaoDescFormItem/YaoDescColFormItem";
+import YaoDatePicker from "@/components/YaoDatePicker/index.vue";
 
 export default {
   name: "YaoDescFormTest",
   components: {
+    YaoDatePicker,
     YaoDescFormItem,
     YaoDescForm,
     YaoDescRowForm,
@@ -138,6 +148,7 @@ export default {
         age: '',
         select: '',
         select2: '',
+        year: [],
         select2Text: '详情使用desc-prop显示',
         textarea: '我们建议使用 CDN 引入 Element 的用户在链接地址上锁定版本，以免将来 Element 升级时受到非兼容性更新的影响。锁定版本的方法请查看 unpkg.com。'
       },
