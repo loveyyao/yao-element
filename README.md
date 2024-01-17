@@ -13,4 +13,4 @@
 
 ## 年、月份范围选择器
 
-> 弥补组件没有年份/月份范围选择功能，详情查看[README.md](src/components/YaoDatePicker/README.md)
+> 年份/月份范围选择功能，详情查看[README.md](src/components/YaoDatePicker/README.md)
