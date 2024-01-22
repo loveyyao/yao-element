@@ -15,6 +15,10 @@
 
 > 年份范围选择功能，详情查看[README.md](src/components/YaoYearRange/README.md)
 
+## table组件
+
+> 公共表格组件，基于`el-tabel`二次封装，新增列/行拖拽排序功能[README.md](src/components/YaoTable/README.md)
+
 ## 公共弹出层组件
 
 > 主要用于表格中存在列需要弹出层显示表格，用法跟 `el-popover` 用法一致，
