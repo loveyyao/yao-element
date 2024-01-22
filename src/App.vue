@@ -4,6 +4,9 @@
       <el-tab-pane label="详情表单" name="descForm">
         <yao-desc-form-test />
       </el-tab-pane>
+      <el-tab-pane label="弹出层" name="yaoPopover">
+        <yao-popover-test />
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -11,10 +14,11 @@
 <script>
 
 import YaoDescFormTest from "@/test/YaoDescForm.vue";
+import YaoPopoverTest from "@/test/YaoPopoverTest.vue";
 
 export default {
   name: 'App',
-  components: {YaoDescFormTest},
+  components: {YaoPopoverTest, YaoDescFormTest},
   data() {
     return {
       activeName: 'descForm'
