@@ -108,11 +108,10 @@
         <el-input v-model="form.textarea" type="textarea" clearable placeholder="请输入"/>
       </yao-desc-col-form-item>
       <yao-desc-col-form-item label="年范围选择" prop="year">
-        <yao-date-picker
+        <yao-year-range
             v-model="form.year"
             placeholder="年范围"
             clearable
-            type="month"
         />
       </yao-desc-col-form-item>
     </yao-desc-row-form>
@@ -129,12 +128,12 @@ import YaoDescForm from "@/components/YaoDescForm/index.vue";
 import YaoDescFormItem from "@/components/YaoDescFormItem/index.vue";
 import YaoDescRowForm from "@/components/YaoDescForm/YaoDescRowForm";
 import YaoDescColFormItem from "@/components/YaoDescFormItem/YaoDescColFormItem";
-import YaoDatePicker from "@/components/YaoDatePicker/index.vue";
+import YaoYearRange from "@/components/YaoYearRange/index.vue";
 
 export default {
   name: "YaoDescFormTest",
   components: {
-    YaoDatePicker,
+    YaoYearRange,
     YaoDescFormItem,
     YaoDescForm,
     YaoDescRowForm,
