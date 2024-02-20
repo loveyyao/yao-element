@@ -17,19 +17,19 @@
           :key="col.props.prop || i"
           v-bind="col.props"
       >
-        <template v-if="col.slots && col.slots.header">
+        <template v-if="col.slots && col.slots.header" #header="{column, $index}">
           <slot
-              slot="header"
-              slot-scope="scope"
               :name="col.slots.header"
-              v-bind="scope"
+              :column="column"
+              :$index="$index"
           />
         </template>
-        <template v-if="col.slots && col.slots.default">
+        <template v-if="col.slots && col.slots.default" #default="{row, column, $index}">
           <slot
-              slot-scope="scope"
               :name="col.slots.default"
-              v-bind="scope"
+              :row="row"
+              :column="column"
+              :$index="$index"
           />
         </template>
       </el-table-column>
@@ -112,6 +112,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this)
     this.initTableRef()
   },
   beforeDestroy() {
