@@ -14,7 +14,7 @@
               <el-table-column width="100" property="name" label="姓名"></el-table-column>
               <el-table-column width="300" property="address" label="地址"></el-table-column>
             </el-table>
-            <el-button slot="reference">弹出层表格</el-button>
+            <el-button slot="reference" type="text" size="small">弹出层表格</el-button>
           </yao-popover>
         </template>
       </el-table-column>
@@ -41,6 +41,12 @@
         :columns="columns"
         :data="tableData"
     >
+      <template slot="prop2">
+        <span>使用插槽显示字段2</span>
+      </template>
+      <template slot="prop2Header">
+        <span>使用插槽显示字段2表头</span>
+      </template>
     </yao-table>
     <div>列拖拽</div>
     <yao-table
@@ -50,6 +56,12 @@
         :data="tableData"
         @col-drag-end="dragEnd"
     >
+      <template #prop2>
+        <span>使用插槽显示字段2</span>
+      </template>
+      <template #prop2Header>
+        <span>使用插槽显示字段2表头</span>
+      </template>
     </yao-table>
     <div>行拖拽</div>
     <yao-table
@@ -60,6 +72,14 @@
         :data="tableData"
         @row-drag-end="dragEnd"
     >
+      <span slot="prop2">使用插槽显示字段2</span>
+      <span slot="prop2Header">使用插槽显示字段2表头</span>
+      <template slot="prop2Header">
+        <span>使用插槽显示字段2表头</span>
+      </template>
+      <template slot="empty">
+        <span>使用插槽显示字段2表头</span>
+      </template>
     </yao-table>
   </div>
 </template>
@@ -141,7 +161,7 @@ export default {
   },
   methods: {
     loadData() {
-      setTimeout(() => {
+      // setTimeout(() => {
         const columns = []
         const data = []
         for (let i = 0; i < 5; i++) {
@@ -150,12 +170,12 @@ export default {
               minWidth: '180px',
               prop: 'prop' + i,
               label: '字段' + i,
-              align: 'center',
-              formatter:(row, column, value) => {
-                const h = this.$createElement
-                return h('div', {style:{color: 'red'}}, value) // 虚拟DOM
-              }
+              align: 'center'
             },
+            slots: i === 2 ? {
+                  default: 'prop2',
+                  header: 'prop2Header'
+                } : null,
             // 其他的属性，如数据库存储id等
             id: i,
             label: '字段' + i
@@ -170,9 +190,10 @@ export default {
           }
           data.push(obj)
         }
+        console.log(columns);
         this.tableData = data
         this.columns = columns
-      }, 0)
+      // }, 0)
     },
     // 表头拖拽排序结束事件
     dragEnd(event) {

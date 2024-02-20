@@ -14,7 +14,7 @@
               <el-table-column width="100" property="name" label="姓名"></el-table-column>
               <el-table-column width="300" property="address" label="地址"></el-table-column>
             </el-table>
-            <el-button slot="reference">弹出层表格</el-button>
+            <el-button slot="reference" type="text" size="small">弹出层表格</el-button>
           </el-popover>
         </template>
       </el-table-column>
@@ -49,7 +49,7 @@
               <el-table-column width="100" property="name" label="姓名"></el-table-column>
               <el-table-column width="300" property="address" label="地址"></el-table-column>
             </el-table>
-            <el-button slot="reference">弹出层表格</el-button>
+            <el-button slot="reference" type="text" size="small">弹出层表格</el-button>
           </yao-popover>
         </template>
       </el-table-column>
